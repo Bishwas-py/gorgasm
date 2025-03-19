@@ -3,7 +3,7 @@
 A modern, responsive todo application built entirely with Go and WebAssembly - no JavaScript required (except for the
 WebAssembly initialization)!
 
-![Go WebAssembly Todo App](https://via.placeholder.com/800x400?text=Go+WebAssembly+Todo+App)
+![Go WebAssembly Todo App](https://github.com/user-attachments/assets/8fefad85-8967-4c46-8d5a-4011f4f05554)
 
 ## Features
 
