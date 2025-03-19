@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "checkJs": true,
+    "strict": true
+  },
+  "include": [
+    "static/**/*.js",
+    "static/**/*.d.ts"
+  ]
+}
