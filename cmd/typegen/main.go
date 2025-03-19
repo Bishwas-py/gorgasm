@@ -5,6 +5,7 @@ import (
 	"go/ast"
 	"go/parser"
 	"go/token"
+	"log"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -27,8 +28,7 @@ type JSDocParam struct {
 
 func main() {
 	if len(os.Args) < 3 {
-		fmt.Fprintf(os.Stderr, "Usage: %s <wasm-source-dir> <output-file>\n", os.Args[0])
-		os.Exit(1)
+		log.Fatalf("Usage: %s <wasm-source-dir> <output-file>\n", os.Args[0])
 	}
 
 	sourceDir := os.Args[1]
@@ -37,8 +37,7 @@ func main() {
 	// Collect all exported functions
 	exports, err := collectExports(sourceDir)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error collecting exports: %v\n", err)
-		os.Exit(1)
+		log.Fatalf("Error collecting exports: %v\n", err)
 	}
 
 	// Generate TypeScript definitions
@@ -47,8 +46,7 @@ func main() {
 	// Write to file
 	err = os.WriteFile(outputFile, []byte(typeScript), 0644)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error writing output file: %v\n", err)
-		os.Exit(1)
+		log.Fatalf("Error writing output file: %v\n", err)
 	}
 
 	fmt.Printf("Successfully generated TypeScript definitions in %s\n", outputFile)
@@ -82,8 +80,8 @@ func collectExports(sourceDir string) (map[string]JSDocComment, error) {
 		}
 
 		// Parse the file
-		fset := token.NewFileSet()
-		file, err := parser.ParseFile(fset, path, fileContent, parser.ParseComments)
+		fileSet := token.NewFileSet()
+		file, err := parser.ParseFile(fileSet, path, fileContent, parser.ParseComments)
 		if err != nil {
 			return err
 		}
@@ -164,8 +162,8 @@ func parseJSDoc(comment string) JSDocComment {
 	}
 
 	// Extract @param and @returns tags
-	paramRegex := regexp.MustCompile(`@param\s+(\w+)\s+\{([^}]+)\}\s+(.*)`)
-	returnsRegex := regexp.MustCompile(`@returns?\s+\{([^}]+)\}`)
+	paramRegex := regexp.MustCompile(`@param\s+(\w+)\s+\{([^}]+)}\s+(.*)`)
+	returnsRegex := regexp.MustCompile(`@returns?\s+\{([^}]+)}`)
 
 	for _, line := range lines {
 		line = strings.TrimSpace(line)

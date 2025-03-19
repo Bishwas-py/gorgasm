@@ -9,12 +9,6 @@ declare class Go {
 }
 
 /**
- * Register exported functions for direct JavaScript calls
- * @returns {void}
- */
-declare function setFilter(): void;
-
-/**
  * Clear input field
  * @returns {void}
  */
@@ -49,4 +43,10 @@ declare function deleteTodo(): void;
  * @returns {void}
  */
 declare function clearCompleted(): void;
+
+/**
+ * Register exported functions for direct JavaScript calls
+ * @returns {void}
+ */
+declare function setFilter(): void;
 

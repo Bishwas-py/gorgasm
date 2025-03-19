@@ -9,7 +9,7 @@ import (
 	"syscall/js"
 	"time"
 
-	"gosthi/internal/dom"
+	"gorgasm/internal/dom"
 )
 
 // Todo represents a single todo item
@@ -266,7 +266,7 @@ func handleFilterClick(this js.Value, args []js.Value) interface{} {
 
 /**
  * Render todos based on filter
- * @param {string} filter Filter name ('all', 'active', 'completed')
+ * @param {string} filter name ('all', 'active', 'completed')
  * @returns {number} Number of todos displayed
  */
 func renderTodos(filter string) int {

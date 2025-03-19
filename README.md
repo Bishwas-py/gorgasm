@@ -24,7 +24,7 @@ WebAssembly initialization)!
 ## Project Structure
 
 ```
-gosthi/
+gorgasm/
 ├── cmd/
 │   └── server/
 │       └── main.go     # HTTP server implementation
@@ -55,8 +55,8 @@ gosthi/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/gosthi.git
-   cd gosthi
+   git clone https://github.com/yourusername/gorgasm.git
+   cd gorgasm
    ```
 
 2. Build and run the application:
