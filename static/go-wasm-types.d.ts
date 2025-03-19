@@ -9,43 +9,55 @@ declare class Go {
 }
 
 /**
- * Clear input field
- * @returns {void}
- */
-declare function value(): void;
-
-/**
- * Register exported functions for direct JavaScript calls
- * @returns {void}
- */
-declare function loadTodos(): void;
-
-/**
- * Register exported functions for direct JavaScript calls
- * @returns {void}
- */
-declare function addTodo(): void;
-
-/**
- * Register exported functions for direct JavaScript calls
+ * Register exported functions for direct calling
  * @returns {void}
  */
 declare function toggleTodo(): void;
 
 /**
- * Register exported functions for direct JavaScript calls
- * @returns {void}
- */
-declare function deleteTodo(): void;
-
-/**
- * Register exported functions for direct JavaScript calls
+ * Register exported functions for direct calling
  * @returns {void}
  */
 declare function clearCompleted(): void;
 
 /**
- * Register exported functions for direct JavaScript calls
+ * Register exported functions for direct calling
+ * @returns {void}
+ */
+declare function toggleAllTodos(): void;
+
+/**
+ * Register exported functions for direct calling
+ * @returns {void}
+ */
+declare function toggleDarkMode(): void;
+
+/**
+ * Register exported functions for direct calling
+ * @returns {void}
+ */
+declare function loadTodos(): void;
+
+/**
+ * Register exported functions for direct calling
+ * @returns {void}
+ */
+declare function addTodo(): void;
+
+/**
+ * Register exported functions for direct calling
+ * @returns {void}
+ */
+declare function setTheme(): void;
+
+/**
+ * Register exported functions for direct calling
+ * @returns {void}
+ */
+declare function deleteTodo(): void;
+
+/**
+ * Register exported functions for direct calling
  * @returns {void}
  */
 declare function setFilter(): void;
