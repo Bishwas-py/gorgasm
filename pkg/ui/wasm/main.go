@@ -656,7 +656,7 @@ func renderTodos(filter string) int {
 		// Create checkbox with custom styling
 		checkbox := document.CreateElement("input")
 		checkbox.SetAttribute("type", "checkbox")
-		checkbox.SetAttribute("class", "toggle")
+		checkbox.SetAttribute("class", fmt.Sprintf("toggle priority-%d", todo.Priority))
 		checkbox.SetAttribute("data-id", todo.ID)
 		if todo.Completed {
 			checkbox.SetAttribute("checked", "checked")
